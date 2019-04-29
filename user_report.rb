@@ -12,6 +12,7 @@ APPLICATION_NAME = 'User Report'.freeze
 CREDENTIALS_PATH = 'credentials.json'.freeze
 CURRENT_CUSTOMER = 'my_customer'.freeze
 DATE_TIME_FORMAT = '%d %b %Y %H:%M'.freeze
+PDF_FILE = 'gcp-user-report.pdf'.freeze
 
 # The file token.yml stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
@@ -62,7 +63,7 @@ response.users.each do |user|
   table_data << row_data
 end
 
-Prawn::Document.generate('gcp-user-report.pdf', page_layout: :landscape) do |pdf|
+Prawn::Document.generate(PDF_FILE, page_layout: :landscape) do |pdf|
   pdf.font('Helvetica')
 
   # Heading.
