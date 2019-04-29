@@ -72,7 +72,7 @@ Prawn::Document.generate(PDF_FILE, page_layout: :landscape) do |pdf|
   end
 
   # Users table.
-  pdf.table(table_data, header: true, row_colors: %w[f0f0f0 ffffff]) do |table|
+  pdf.table(table_data, header: true, row_colors: %w[ffffff f0f0f0]) do |table|
     table.row(0).background_color = '000000'
     table.row(0).text_color = 'ffffff'
     table.row(0).font_style = :bold
