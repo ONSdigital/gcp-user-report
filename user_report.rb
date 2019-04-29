@@ -79,7 +79,7 @@ Prawn::Document.generate(PDF_FILE, page_layout: :landscape) do |pdf|
   end
 
   # Page numbers.
-  string = 'page <page> of <total>'
+  string = 'page <page>'
   options = { at: [pdf.bounds.right - 150, 0],
               width: 150,
               align: :right,
