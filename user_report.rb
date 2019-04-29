@@ -51,10 +51,10 @@ service.authorization = authorize
 response = service.list_users(customer: CURRENT_CUSTOMER,
                               order_by: 'email')
 
-table_data = [['Email', 'Admin', '2FA Enabled', 'Suspended', 'Created', 'Last Login']]
+table_data = [['Name', 'Admin', '2FA Enabled', 'Suspended', 'Created', 'Last Login']]
 response.users.each do |user|
   row_data = []
-  row_data << user.primary_email
+  row_data << user.name.full_name
   row_data << (user.is_admin? ? 'Yes' : 'No')
   row_data << (user.is_enrolled_in2_sv? ? 'Yes' : 'No')
   row_data << (user.suspended? ? 'Yes' : 'No')
